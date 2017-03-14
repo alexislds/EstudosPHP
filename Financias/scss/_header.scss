@@ -1,0 +1,17 @@
+.topo{
+  align-items:center; background:#fff; box-shadow:1px 1px 5px rgba(#000, .3); color:#999; display:flex; font-family:'Quicksand'; height:70px; justify-content:space-between; margin-bottom:40px; padding:0 40px; width:100%;
+
+  &-logo{
+    &-link      {font-size:20px; font-weight:normal; transition:color 300ms;}
+    &-link:hover{color:#f38c23;}
+  }
+
+  &-menu{
+    &-item                    {background-image:linear-gradient(to bottom, transparent, transparent); background-repeat:no-repeat; background-position:left bottom; background-size:0 1px; display:inline-block; padding:5px;}
+    &-item:hover              {background-image:linear-gradient(to bottom, #f38c23, #f38c23); background-size:100% 1px; transition:background-size 500ms cubic-bezier(1,.01,.4,1);}
+    &-item:not(:first-of-type){margin-left:10px;}
+
+    &-link      {font-size:14px; transition:color 300ms;}
+    &-link:hover{color:#f38c23;}
+  }
+}

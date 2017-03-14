@@ -1,0 +1,16 @@
+.tabela-container{
+  height:auto; width:100%;
+
+  .tabela{
+    border:1px solid rgba(#fff, .3); color:#fff; font-family:'Quicksand'; font-weight:normal; margin:0 auto; text-align:center; width:1200px;
+
+    &-topo {
+      background-color:rgba(#fff, .3);
+
+      &-th{padding:15px;}
+    }
+    &-corpo{
+      &-td{padding:15px; border-bottom:1px solid rgba(#fff, .3);}
+    }
+  }
+}
