@@ -16,14 +16,20 @@
     <h1>Tela Principal</h1><br>
 
     <?php
-    if(!empty($_POST)) {
-      include 'db.php';
+    include 'db.php';
 
-      $db = new Db;
-    }
-    else {
-      echo "<p>Por favor se logue antes</p>";
-    }
+    $db = new Db;
+    // $db->status();
+    // $db->adicionar();
+
+    // if(!empty($_POST)) {
+    //   include 'db.php';
+    //
+    //   $db = new Db;
+    // }
+    // else {
+    //   echo "<p>Por favor se logue antes</p>";
+    // }
     ?>
   </body>
   </html>

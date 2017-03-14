@@ -1,29 +1,41 @@
 <?php
   class Db {
-    protected $banco = null;
+    public $banco = null;
 
     function __construct() {
-      $host    = "mysql4.gear.host";
-      $nome    = "alexisdb";
-      $usuario = "alexisdb";
-      $senha   = "killevil99*";
+      $host    = 'mysql4.gear.host';
+      $nome    = 'alexisdb';
+      $usuario = 'alexisdb';
+      $senha   = 'killevil99*';
 
       try {
-        $banco = new PDO('mysql:host=mysql4.gear.host;dbname=alexisdb', $usuario, $senha);
-        echo 'Conectei<br>';
+        $banco = new PDO('mysql:host=' . $host . ';' . 'dbname=' . $nome, $usuario, $senha);
+        $sql   = 'Select * from `usuarios`';
 
-        $sql        = "Select * from `usuarios`";
-        $resultados = $banco->query($sql);
-
-        foreach ($resultados as $resultado) {
-          print_r($resultado);
-          echo '<br>';
+        foreach ($banco->query($sql) as $row){
+          echo $row['nome'] . '<br>';
         }
+
+        $this->banco = $banco;
       }
 
-      catch(PDOException $error) {
-        echo $error->getMessage();
+      catch(PDOException $e) {
+        echo $e->getMessage();
+        echo "1";
       }
+    }
+
+    function status(){
+      $banco = $this->banco;
+
+      echo $banco->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+    }
+
+    function adicionar(){
+      $banco = $this->banco;
+      $sql   = "INSERT INTO usuarios (usuario, senha, nome) VALUES ('funcao', 'lalalala', 'testandooooo')";
+
+      $banco->query($sql);
     }
   }
 ?>
