@@ -1,5 +1,10 @@
-@import 'reset';
-@import 'index';
-@import 'login';
-@import 'header';
-@import 'tabela';
+@import '_reset';
+@import '_geral';
+@import '_header';
+@import '_tabela';
+
+/* views */
+
+@import '_home';
+@import '_conta';
+@import '_despesas';

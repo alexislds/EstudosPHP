@@ -13,5 +13,6 @@
   <main class="main">
     <?php include $arquivoView; ?>
   </main>
+  <?php include './view/componentes/js.php' ?>
 </body>
 </html>
